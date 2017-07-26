@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Empresa;
+use App\EntrevistaArquitectura;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -32,5 +33,16 @@ class HomeController extends Controller
         $empresas = Empresa::select(['id', 'Empresa'])->where('activo', 1)->get();
 
         return view('entrevista.solicitud', compact('empresas'));
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function solicitudEntrevista (Request $request)
+    {
+        $entrevista = EntrevistaArquitectura::create($request->all());
+
+        return redirect()->to('/home');
     }
 }

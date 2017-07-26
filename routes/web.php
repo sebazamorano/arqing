@@ -19,3 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/solicitud/entrevista', 'HomeController@solicitud')->name('solicitud.entrevista');
+Route::post('/solicitud', 'HomeController@solicitudEntrevista')->name('solicitud');
