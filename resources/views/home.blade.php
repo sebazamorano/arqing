@@ -11,19 +11,21 @@
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th>Jefe Proyecto</th>
+                            <th>Empresa</th>
+                            <th>Descripcion</th>
+                            <th>Criticidad</th>
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($entrevistas as $entrevista)
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{ $entrevista->jefe_proyecto }}</td>
+                            <td>{{ $entrevista->Empresa }}</td>
+                            <td>{{ $entrevista->descripcion }}</td>
+                            <td>{{ $entrevista->criticidad }}</td>
                         </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
